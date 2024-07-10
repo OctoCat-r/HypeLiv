@@ -32,12 +32,14 @@ export const ClipPathLinks = () => {
           title="skillswipes"
           text=" Led the development of entire micro learning platform from scratch
           while identifying crucial user flows"
+          padding1={20}
         />
         <LinkBox
           Icon={SiShopify}
           href="#"
           title="Talent Carriage"
           text="Architected the internal tooling of India's only HRSS Service provider, to help them increase efficiency by 100 folds"
+          padding1={20}
         />
       </div>
       {/* <div className="grid grid-cols-4 divide-x divide-neutral-900">
