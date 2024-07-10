@@ -5,7 +5,7 @@ import Image from "next/image";
 
 type Props = {
   item: {
-    badge: Number;
+    badge: string;
     title: string;
     image?: string;
     description: string;

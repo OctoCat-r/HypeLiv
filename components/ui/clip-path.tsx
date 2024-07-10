@@ -22,6 +22,8 @@ export const ClipPathLinks = () => {
           Icon={SiGoogle}
           href="#"
           title="Trusted by your favourite companies"
+          text=""
+          padding1={40}
         />
         {/* <LinkBox Icon={SiShopify} href="#" /> */}
       </div>

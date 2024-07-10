@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Contact = (props: Props) => {
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
