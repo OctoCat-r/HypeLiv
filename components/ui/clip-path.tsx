@@ -17,16 +17,16 @@ import { IconType } from "react-icons";
 export const ClipPathLinks = () => {
   return (
     <div className="divide-y divide-neutral-400 border border-neutral-400">
-      <div className="grid grid-cols-1 divide-x divide-neutral-400">
+      {/* <div className="grid grid-cols-1 divide-x divide-neutral-400">
         <LinkBox
           Icon={SiGoogle}
           href="#"
-          title="Trusted by your favourite companies"
+          title="Trusted by your<br/> favourite companies"
           text=""
           padding1={40}
         />
-        {/* <LinkBox Icon={SiShopify} href="#" /> */}
-      </div>
+        
+      </div> */}
       <div className="grid grid-cols-2 divide-x divide-neutral-400">
         <LinkBox
           Icon={SiGoogle}
@@ -173,10 +173,10 @@ const LinkBox = ({
       onMouseLeave={(e) => {
         handleMouseLeave(e);
       }}
-      className="relative grid h-30 w-full place-content-center md:h-72 bg-slate-800"
+      className="relative grid h-30 w-full place-content-center md:h-72 bg-[#222222]"
     >
       {/* <Icon className="text-xl sm:text-3xl lg:text-4xl" /> */}
-      <h2 className="text-4xl font-mono font-bold text-slate-300">{title}</h2>
+      <h2 className="text-4xl font-bold text-slate-300">{title}</h2>
       {/* <p className="text-7xl text-slate-200 p-40 text-center">{text}</p> */}
 
       <div
@@ -184,10 +184,10 @@ const LinkBox = ({
         style={{
           clipPath: BOTTOM_RIGHT_CLIP,
         }}
-        className="absolute inset-0 grid place-content-center bg-gradient-to-b from-indigo-400 via-purple-400 to-pink-400 text-white text-center gap-3"
+        className="absolute inset-0 grid place-content-center bg-gradient-to-b from-[#8E7EDD]  to-[#F67FA2] text-white text-center gap-3"
       >
         {/* <Icon className="text-xl sm:text-3xl md:text-4xl" /> */}
-        <h2 className="text-3xl font-mono font-bold">{title}</h2>
+        <h2 className="text-3xl font-satoshi font-bold">{title}</h2>
         <p className={`text-base px-${padding1 ? padding1 : 40}`}>{text}</p>
       </div>
     </a>

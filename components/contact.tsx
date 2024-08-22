@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { styles } from "./styles";
+import toast from "react-hot-toast";
 // import emailjs from "@emailjs/browser";
 type Props = {
   className: string;
@@ -25,7 +26,7 @@ const Contact = (props: Props) => {
       [name]: value,
     });
   };
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setLoading(true);
     console.log("Thank you");
@@ -63,6 +64,29 @@ const Contact = (props: Props) => {
     //       alert("Ahh, something went wrong. Please try again.");
     //     }
     //   );
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "f227d375-df02-405a-8881-7b1fe4b4f44e",
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
+    });
+    const result = await response.json();
+    if (result.success) {
+      toast.success("Message sent successfully");
+      setLoading(false);
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }
   };
 
   return (
@@ -75,36 +99,36 @@ const Contact = (props: Props) => {
         className=" flex flex-col gap-6"
       >
         <label className="flex flex-col">
-          <span className="text-slate-600 font-medium mb-2">Your Name</span>
+          <span className="text-[#8C8C8C] font-medium mb-2">Name</span>
           <input
             type="text"
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="What's your good name?"
-            className="bg-tertiary py-2 px-6 placeholder:text-slate-600 text-white rounded-lg outline-none border-none font-medium bg-slate-700"
+            placeholder="John Doe"
+            className="bg-tertiary py-2 px-6 placeholder:text-[#8C8C8C] border text-[#8C8C8C] rounded-lg font-medium bg-[#272727] border-[#6F6F6FB2]"
           />
         </label>
         <label className="flex flex-col">
-          <span className="text-slate-600 font-medium mb-2">Your email</span>
+          <span className="text-[#8C8C8C] font-medium mb-2">E-mail</span>
           <input
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
             placeholder="What's your web address?"
-            className="bg-tertiary py-2 px-6 placeholder:text-slate-600 text-white rounded-lg outline-none border-none font-medium bg-slate-700"
+            className="bg-tertiary py-2 px-6 placeholder:text-[#8C8C8C] border text-[#8C8C8C] rounded-lg  font-medium bg-[#272727] border-[#6F6F6FB2]"
           />
         </label>
         <label className="flex flex-col">
-          <span className="text-slate-600 font-medium mb-2">Your Message</span>
+          <span className="text-[#8C8C8C] font-medium mb-2">Message</span>
           <textarea
             rows={7}
             name="message"
             value={form.message}
             onChange={handleChange}
             placeholder="What you want to say?"
-            className="bg-tertiary py-2 px-6 placeholder:text-slate-600 text-white rounded-lg outline-none border-none font-medium bg-slate-700"
+            className="bg-tertiary py-2 px-6 placeholder:text-[#8C8C8C] border text-[#8C8C8C] rounded-lg  font-medium bg-[#272727] border-[#6F6F6FB2]"
           />
         </label>
         <button

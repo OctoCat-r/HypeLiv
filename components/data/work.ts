@@ -27,4 +27,11 @@ export const dummyContent = [
     badge: "4",
     image: "/Frame 16.png",
   },
+  {
+    title: "UAT",
+    description:
+      "A Phase where we test the product with you and iron out all the discrepancies before your launch.",
+    badge: "5",
+    image: "/Frame 16.png",
+  },
 ];

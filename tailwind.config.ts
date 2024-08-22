@@ -1,3 +1,4 @@
+import { Nunito } from "next/font/google";
 import type { Config } from "tailwindcss";
 const {
   default: flattenColorPalette,
@@ -21,6 +22,9 @@ const config = {
       },
     },
     extend: {
+      blur: {
+        sm2: "1px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,6 +59,11 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        Nunito: ["Nunito", "serif"],
+        satoshi: ["var(--font-satoshi)"],
       },
       borderRadius: {
         lg: "var(--radius)",

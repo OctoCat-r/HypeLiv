@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+// import { Satoshi } from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-providers";
 import Header from "./components/header";
-// import Navbar from "./components/navbar";
+import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
+const myFont = localFont({
+  src: "Satoshi-Variable.ttf",
+  display: "swap",
+  variable: "--font--satoshi",
+});
 
 export const metadata: Metadata = {
   title: "HypeLiv",
@@ -19,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={myFont.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -27,6 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          <Toaster position="bottom-right" />
           {children}
         </ThemeProvider>
       </body>
