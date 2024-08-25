@@ -133,7 +133,7 @@ const Contact = (props: Props) => {
         </label>
         <button
           type="submit"
-          className="group relative px-4 py-2 font-medium text-slate-100 transition-colors duration-[400ms] hover:text-white  bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 shadow-md"
+          className="group relative px-4 py-2 font-medium text-slate-100 transition-colors duration-300 hover:text-white  bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 shadow-md"
         >
           <span className="text-xl">{loading ? "Sending..." : "Send"}</span>
           <span className="absolute left-0 top-0 h-[2px] w-0  bg-white transition-all duration-100 group-hover:w-full" />

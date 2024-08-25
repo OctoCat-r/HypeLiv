@@ -33,7 +33,7 @@ export default function Home() {
               className="hidden md:block"
             /> */}
             {dummyContent.map((item, index) => (
-              <Works item={item} key={index} />
+              <Works item={item} key={index} itemKey = {index} />
             ))}
 
             {/* <Image src="/sideImage.svg" alt="alt" width={50} height={50} /> */}

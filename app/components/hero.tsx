@@ -70,42 +70,6 @@ const Hero = (props: Props) => {
         />
       </div>
     </div>
-    // <LampContainer>
-    //   <motion.h1
-    //     initial={{ opacity: 0.5, y: 100 }}
-    //     whileInView={{ opacity: 1, y: 0 }}
-    //     transition={{
-    //       delay: 0.1,
-    //       duration: 0.8,
-    //       ease: "easeInOut",
-    //     }}
-    //     className="mt-2 bg-gradient-to-br from-slate-50 to-slate-100 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl font-Nunito"
-    //   >
-    //     Building Custom{" "}
-    //     <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-    //       Solutions{" "}
-    //     </span>
-    //     <br />
-    //     and{" "}
-    //     <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-    //       Scaling{" "}
-    //     </span>{" "}
-    //     {/* from 1 to 100 */}
-    //   </motion.h1>
-    //   <motion.p
-    //     className=" text-white text-center mt-10 md:mt-5 text-lg font-light font-Nunito"
-    //     initial={{ opacity: 0.8, y: 100 }}
-    //     whileInView={{ opacity: 1, y: 0 }}
-    //     transition={{
-    //       delay: 0.2,
-    //       duration: 0.8,
-    //       ease: "easeInOut",
-    //     }}
-    //   >
-    //     Your Trusted Partner in End-to-End Product Development, Strategic
-    //     Scaling, and Sustainable Growth{" "}
-    //   </motion.p>
-    // </LampContainer>
   );
 };
 

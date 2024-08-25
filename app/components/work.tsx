@@ -11,9 +11,10 @@ type Props = {
     description: string;
   };
   key: Number;
+  itemKey: Number;
 };
 
-function Works({ item, key }: Props) {
+function Works({ item, itemKey }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
