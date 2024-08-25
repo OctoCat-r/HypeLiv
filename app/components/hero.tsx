@@ -62,7 +62,7 @@ const Hero = (props: Props) => {
 
       <div className="md:w-1/3 hidden md:block relative blur-sm2 hover:blur-0 border-gray-700 ">
         <Image
-          src="/lightbulb.svg"
+          src="/Lightbulb.svg"
           alt="alt"
           width={10}
           height={10}
