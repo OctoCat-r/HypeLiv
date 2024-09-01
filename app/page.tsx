@@ -25,18 +25,10 @@ export default function Home() {
             <h2 className="text-black text-4xl text-center font-medium">
               How We work
             </h2>
-            {/* <Image
-              src="/sideImage.svg"
-              alt="alt"
-              width={150}
-              height={150}
-              className="hidden md:block"
-            /> */}
+        
             {dummyContent.map((item, index) => (
               <Works item={item} key={index} itemKey = {index} />
             ))}
-
-            {/* <Image src="/sideImage.svg" alt="alt" width={50} height={50} /> */}
           </div>
           {/* </TracingBeam> */}
 

@@ -9,6 +9,21 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const Hero = (props: Props) => {
+  const handleContactScroll = () => {
+    const aboutSection = document.querySelector("#contact");
+    if (aboutSection) {
+      const headerOffset = 170; // Adjust this value to your header height
+      const elementPosition = aboutSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      console.log(offsetPosition, elementPosition, window.scrollY);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <div className="h-[80vh] md:h-screen w-full flex flex-col md:flex-row justify-center items-center bg-[#222222] px-10 py-16 relative md:flex  md:items-center  ">
       <div className="md:w-2/3 mt-10">
@@ -37,12 +52,13 @@ const Hero = (props: Props) => {
           Your Trusted Partner in End-to-End Product Development, Strategic
           Scaling, and Sustainable Growth
         </p>
-        <Link
-          href="#contact"
+        <div
+          // href="#contact"
           className="flex items-center justify-center md:justify-start py-10 md:ml-10"
         >
           <Button
             className="bg-slate-100 text-black hover:gap-4 font-satoshi gap-2 rounded-md relative"
+            onClick={handleContactScroll}
             style={{
               background:
                 "linear-gradient(white, white) padding-box, linear-gradient(189.21deg, #F67FA2 6.82%, #8E7EDD 89.44%) border-box",
@@ -57,7 +73,7 @@ const Hero = (props: Props) => {
               height={25}
             />
           </Button>
-        </Link>
+        </div>
       </div>
 
       <div className="md:w-1/3 hidden md:block relative blur-sm2 hover:blur-0 border-gray-700 ">
